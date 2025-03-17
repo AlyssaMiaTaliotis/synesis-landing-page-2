@@ -65,11 +65,10 @@ export default function Home() {
 
             In the US, 42% of adults have at least two chronic diseases, yet physicians are forced 
             to operate blindly in a fragmented healthcare system where specialists work in silos with
-             limited visibility into a patient’s full treatment plan across disciplines. 
-             This lack of coordination leads to medication conflicts, misdiagnoses, treatment gaps, and redundant 
-             testing - costing the US healthcare system $200 billion annually and ultimately compromising clinical 
-             decision-making. As a result, care is inadvertently suboptimal, cost-inefficient, and often fatal. 
-
+            limited visibility into a patient&rsquo;s full treatment plan across disciplines. 
+            This lack of coordination leads to medication conflicts, misdiagnoses, treatment gaps, and redundant 
+            testing &mdash; costing the US healthcare system $200 billion annually and ultimately compromising clinical 
+            decision-making. As a result, care is inadvertently suboptimal, cost-inefficient, and often fatal. 
           </p>
         </section>
 
@@ -77,17 +76,16 @@ export default function Home() {
         <section className="space-y-6 max-w-4xl">
           <h2 className="text-5xl font-semibold text-gray-100">The Synesis Solution</h2>
           <p className="text-2xl text-gray-200 leading-relaxed">
-          Synesis is AI-powered medical intelligence designed to support healthcare providers streamline 
-          comorbidity management by bridging cross-specialty gaps and enabling physicians to deliver safe, 
-          data-driven, personalized treatment strategies.
+            Synesis is AI-powered medical intelligence designed to support healthcare providers streamline 
+            comorbidity management by bridging cross-specialty gaps and enabling physicians to deliver safe, 
+            data-driven, personalized treatment strategies.
           </p>
           <p className="text-2xl text-gray-200 leading-relaxed">
-
-          At the core of Synesis is a cutting-edge AI engine for personalized treatment optimization. It continuously 
-          analyzes real-world clinical data, physician decision patterns, and evolving medical guidelines to deliver proactive, 
-          evidence-based recommendations. Using reinforcement learning, it refines its insights based on clinician feedback and 
-          adapts to newly identified drug interactions, providing essential intelligence that would be impossible to track manually 
-          and ensuring physicians stay ahead of an ever-changing pharmaceutical landscape. Rather than replacing clinical judgment, Synesis enhances it. 
+            At the core of Synesis is a cutting-edge AI engine for personalized treatment optimization. It continuously 
+            analyzes real-world clinical data, physician decision patterns, and evolving medical guidelines to deliver proactive, 
+            evidence-based recommendations. Using reinforcement learning, it refines its insights based on clinician feedback and 
+            adapts to newly identified drug interactions, providing essential intelligence that would be impossible to track manually 
+            and ensuring physicians stay ahead of an ever-changing pharmaceutical landscape. Rather than replacing clinical judgment, Synesis enhances it. 
           </p>
         </section>
 
@@ -95,22 +93,12 @@ export default function Home() {
         <section className="space-y-6 max-w-4xl">
           <h2 className="text-5xl font-semibold text-gray-100">The Synesis Advantage</h2>
           <p className="text-2xl text-gray-200 leading-relaxed">
-          Synesis redefines clinical decision support with personalized, cross-specialty treatment optimization powered by machine learning. 
-          It continuously refines recommendations based on real physician decisions, evolving medical guidelines, and patient-specific factors, 
-          ensuring insights remain dynamic and clinically relevant. Unlike traditional systems that burden physicians with generic, low-value alerts, 
-          Synesis delivers only the most actionable, context-aware insights. Designed for seamless workflow integration, it empowers care teams to provide 
-          smart, safe, and coordinated treatment—without disruption.
-          </p>
-
-          <p className="text-2xl text-gray-200 leading-relaxed">
-          Synesis has secured strong early traction, with interest from major healthcare organizations 
+            Synesis has secured strong early traction, with interest from major healthcare organizations 
             such as <span className="font-semibold text-gray-50">Kaiser Permanente</span> and 
             strategic support from <span className="font-semibold text-gray-50">Mitsubishi Electric Innovation Center</span>. 
-            
           </p>
         </section>
 
-        
         {/* Research Team */}
         <section className="space-y-6 max-w-4xl">
           <h2 className="text-5xl font-semibold text-gray-100">Research Team</h2>
@@ -127,23 +115,18 @@ export default function Home() {
               <span className="font-semibold text-gray-50">Zulal Akarsu</span> <br />
               AI, ML for Medical Innovation Research at Harvard SEAS & MIT <br />
               Mathematician <br />
-              <Link href="https://www.linkedin.com/in/alyssa-mia-taliotis/" target="_blank" className="text-black-400 font-semibold hover:underline">
+              <Link href="https://www.linkedin.com/in/zulal-akarsu/" target="_blank" className="text-black-400 font-semibold hover:underline">
                 LinkedIn
               </Link>
             </p>
-            
-            
             <p>
               <span className="font-semibold text-gray-50">Shiv Redhu</span> <br />
               AI, ML for Medical Innovation Research at Harvard SEAS & MIT <br />
               Mathematician <br />
-              <Link href="https://www.linkedin.com/in/alyssa-mia-taliotis/" target="_blank" className="text-black-400 font-semibold hover:underline">
+              <Link href="https://www.linkedin.com/in/shiv-redhu/" target="_blank" className="text-black-400 font-semibold hover:underline">
                 LinkedIn
               </Link>
             </p>
-
-
-            
           </div>
         </section>
 
@@ -152,7 +135,7 @@ export default function Home() {
           <h2 className="text-5xl font-semibold text-gray-100">Join Us</h2>
           <p className="text-2xl text-gray-200 leading-relaxed">
             Help shape the future of AI-powered medical intelligence. <br />
-            Whether you're a physician, healthcare system, or investor, we’d love to connect.
+            Whether you&apos;re a physician, healthcare system, or investor, we&rsquo;d love to connect.
           </p>
           <Link href="mailto:alyssamiataliotis@gmail.com" className="px-6 py-3 text-lg font-semibold text-gray-100 bg-gray-800 rounded-lg hover:bg-gray-700">
             Get in Touch
