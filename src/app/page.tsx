@@ -1,87 +1,94 @@
+"use client";
+import { useEffect, useRef } from "react";
+import Link from "next/link";
+
 export default function Home() {
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let angle = 0;
+
+    function drawSpiral() {
+      if (!canvas || !ctx) return;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.beginPath();
+      ctx.translate(canvas.width / 2, canvas.height / 2);
+
+      for (let i = 0; i < 500; i++) {
+        const x = (0.4 * i) * Math.cos(i * 0.05 + angle);
+        const y = (0.4 * i) * Math.sin(i * 0.05 + angle);
+        ctx.lineTo(x, y);
+      }
+
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.12)";
+      ctx.lineWidth = 1.8;
+      ctx.stroke();
+      ctx.resetTransform();
+
+      angle += 0.000005; // Smooth, slow movement
+      requestAnimationFrame(drawSpiral);
+    }
+
+    drawSpiral();
+  }, []);
+
   return (
-    <div className="bg-white">
-      <div className="whitepaper-container">
-        {/* Title Section */}
-        <header className="mb-12 pt-8">
-          <h1 className="whitepaper-title">Synesis</h1>
-          <p className="whitepaper-subtitle">
-            AI-powered medical intelligence delivering real-time treatment insights for physicians.
-          </p>
-        </header>
+    <div className="relative min-h-screen bg-[#b4b4b4] text-gray-100">
+      <canvas ref={canvasRef} className="absolute top-0 left-0 w-full h-full opacity-15" />
 
-        {/* Abstract/Introduction */}
-        <section className="whitepaper-section">
-          <p className="whitepaper-text">
-            Synesis provides personalized, cross-specialty treatment optimization that adapts to individual patients. 
+      {/* Hero Section */}
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-16 text-center">
+        <h1 className="text-8xl font-extrabold tracking-wide text-gray-50">Synesis</h1>
+        <p className="mt-4 text-3xl text-gray-200 max-w-3xl font-light leading-snug">
+          AI-powered medical intelligence delivering real-time, cross-specialty treatment insights for physicians.
+        </p>
+      </div>
+
+      {/* Content Sections on the Side */}
+      <div className="relative z-10 max-w-5xl mx-auto space-y-24 px-16 py-24 flex flex-col items-start text-left">
+        <section className="space-y-6 max-w-3xl">
+          <h2 className="text-5xl font-semibold text-gray-100">Current Solutions</h2>
+          <p className="text-2xl text-gray-200 leading-relaxed">
+            Synesis competes with EHR-embedded clinical decision support systems 
+            (e.g., Epic’s Best Practice Advisories), AI-driven analytics platforms 
+            (e.g., Tempus, IBM Watson Health), and medication management tools 
+            (e.g., MedAware, First Databank). These systems often generate excessive alerts, 
+            lack cross-specialty coordination, or rely on static rule-based recommendations 
+            rather than personalized insights.
+          </p>
+        </section>
+
+        <section className="space-y-6 max-w-3xl">
+          <h2 className="text-5xl font-semibold text-gray-100">The Synesis Advantage</h2>
+          <p className="text-2xl text-gray-200 leading-relaxed">
+            Synesis provides personalized, cross-specialty treatment optimization that 
+            adapts to individual patients. Using machine learning, it continuously refines 
+            recommendations based on real physician decisions, evolving guidelines, and patient-specific factors. 
             Unlike traditional systems that overwhelm doctors with generic alerts, Synesis delivers actionable, 
-            context-aware insights that enhance clinical decision-making and improve patient outcomes.
+            context-aware insights, reducing cognitive burden. By integrating seamlessly into physician workflows, 
+            it enables smarter, safer, and coordinated care without disruption.
           </p>
         </section>
 
-        {/* Key Features */}
-        <section className="whitepaper-section">
-          <h2 className="whitepaper-section-title">Key Features</h2>
-          
-          <div className="whitepaper-feature">
-            <h3 className="text-lg font-semibold mb-2">Personalized Insights</h3>
-            <p>Synesis delivers tailored treatment recommendations based on comprehensive patient data analysis, 
-            considering individual medical history, genetic factors, and response patterns to create highly 
-            personalized care plans.</p>
-          </div>
-          
-          <div className="whitepaper-feature">
-            <h3 className="text-lg font-semibold mb-2">Cross-Specialty Integration</h3>
-            <p>Our system seamlessly integrates across medical specialties, breaking down traditional silos 
-            to provide a holistic view of patient care. This integration ensures that recommendations account for 
-            all aspects of a patient&apos;s health profile.</p>
-          </div>
-          
-          <div className="whitepaper-feature">
-            <h3 className="text-lg font-semibold mb-2">Adaptive Learning</h3>
-            <p>Through continuous refinement of recommendations based on outcomes and new medical research, 
-            Synesis evolves with each patient interaction. The system incorporates the latest evidence-based 
-            practices to maintain clinical relevance.</p>
-          </div>
-        </section>
-
-        {/* The Advantage */}
-        <section className="whitepaper-section">
-          <h2 className="whitepaper-section-title">The Advantage</h2>
-          <p className="whitepaper-text">
-            Synesis represents a paradigm shift in clinical decision support. By focusing on actionable, 
-            context-aware insights rather than generic alerts, the system reduces alert fatigue and increases 
-            clinical utility. Physicians receive precisely the information they need at the point of care, 
-            enhancing their ability to make informed decisions quickly and confidently.
-          </p>
-          <p className="whitepaper-text">
-            The adaptive nature of Synesis means that it continuously improves its recommendations based on 
-            real-world outcomes, creating a virtuous cycle of enhancement that benefits both providers and patients.
+        <section className="space-y-6 max-w-3xl">
+          <h2 className="text-5xl font-semibold text-gray-100">Founding Team</h2>
+          <p className="text-2xl text-gray-200">
+            <span className="font-semibold text-gray-50">Alyssa Mia Taliotis</span> <br />
+            AI, ML for Medical Innovation Research at Harvard SEAS & MIT <br />
+            Mathematician <br />
+            <Link href="https://www.linkedin.com/in/alyssa-mia-taliotis/" target="_blank" className="text-black-400 font-semibold hover:underline">
+              LinkedIn
+            </Link>
           </p>
         </section>
-
-        {/* Team */}
-        <section className="whitepaper-section">
-          <h2 className="whitepaper-section-title">Research Team</h2>
-          <p className="whitepaper-author">
-            <strong>Alyssa Mia Taliotis</strong>
-          </p>
-          <p className="text-center mb-8">AI, ML Research at Harvard SEAS & MIT</p>
-        </section>
-
-        {/* Contact */}
-        <section className="whitepaper-section">
-          <h2 className="whitepaper-section-title">Contact Information</h2>
-          <p className="text-center">
-            For more information about Synesis and its applications in clinical settings, 
-            please contact our research team via email.
-          </p>
-        </section>
-
-        {/* Footer */}
-        <footer className="whitepaper-footer">
-          <p>&copy; 2025 Synesis</p>
-        </footer>
       </div>
     </div>
   );
