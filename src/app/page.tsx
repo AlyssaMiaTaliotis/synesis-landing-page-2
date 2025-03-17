@@ -33,7 +33,7 @@ export default function Home() {
       ctx.stroke();
       ctx.resetTransform();
 
-      angle += 0.000005; // Smooth, slow movement
+      angle += 0.000005;
       requestAnimationFrame(drawSpiral);
     }
 
@@ -41,54 +41,124 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-[#b4b4b4] text-gray-100">
+    <div className="relative min-h-screen bg-[#a6a6a6] text-gray-100">
       <canvas ref={canvasRef} className="absolute top-0 left-0 w-full h-full opacity-15" />
 
-      {/* Hero Section */}
+      {/* Headline Section */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-16 text-center">
-        <h1 className="text-8xl font-extrabold tracking-wide text-gray-50">Synesis</h1>
-        <p className="mt-4 text-3xl text-gray-200 max-w-3xl font-light leading-snug">
-          AI-powered medical intelligence delivering real-time, cross-specialty treatment insights for physicians.
+        <h1 className="text-7xl font-extrabold tracking-wide text-gray-50 opacity-90">
+          Synesis
+        </h1>
+        <p className="mt-4 text-3xl text-gray-200 max-w-3xl font-georgia leading-snug">
+          AI-powered medical intelligence optimizing cross-specialty comorbidity treatment.
         </p>
       </div>
 
-      {/* Content Sections on the Side */}
+      {/* Content Sections */}
       <div className="relative z-10 max-w-5xl mx-auto space-y-24 px-16 py-24 flex flex-col items-start text-left">
-        <section className="space-y-6 max-w-3xl">
-          <h2 className="text-5xl font-semibold text-gray-100">Current Solutions</h2>
+
+        {/* The Problem */}
+        <section className="space-y-6 max-w-4xl">
+          <h2 className="text-5xl font-semibold text-gray-100">The Problem</h2>
           <p className="text-2xl text-gray-200 leading-relaxed">
-            Synesis competes with EHR-embedded clinical decision support systems 
-            (e.g., Epic’s Best Practice Advisories), AI-driven analytics platforms 
-            (e.g., Tempus, IBM Watson Health), and medication management tools 
-            (e.g., MedAware, First Databank). These systems often generate excessive alerts, 
-            lack cross-specialty coordination, or rely on static rule-based recommendations 
-            rather than personalized insights.
+            Managing comorbidities is one of the most complex challenges in medicine.
+
+            In the US, 42% of adults have at least two chronic diseases, yet physicians are forced 
+            to operate blindly in a fragmented healthcare system where specialists work in silos with
+             limited visibility into a patient’s full treatment plan across disciplines. 
+             This lack of coordination leads to medication conflicts, misdiagnoses, treatment gaps, and redundant 
+             testing - costing the US healthcare system $200 billion annually and ultimately compromising clinical 
+             decision-making. As a result, care is inadvertently suboptimal, cost-inefficient, and often fatal. 
+
           </p>
         </section>
 
-        <section className="space-y-6 max-w-3xl">
+        {/* Our Solution */}
+        <section className="space-y-6 max-w-4xl">
+          <h2 className="text-5xl font-semibold text-gray-100">The Synesis Solution</h2>
+          <p className="text-2xl text-gray-200 leading-relaxed">
+          Synesis is AI-powered medical intelligence designed to support healthcare providers streamline 
+          comorbidity management by bridging cross-specialty gaps and enabling physicians to deliver safe, 
+          data-driven, personalized treatment strategies.
+          </p>
+          <p className="text-2xl text-gray-200 leading-relaxed">
+
+          At the core of Synesis is a cutting-edge AI engine for personalized treatment optimization. It continuously 
+          analyzes real-world clinical data, physician decision patterns, and evolving medical guidelines to deliver proactive, 
+          evidence-based recommendations. Using reinforcement learning, it refines its insights based on clinician feedback and 
+          adapts to newly identified drug interactions, providing essential intelligence that would be impossible to track manually 
+          and ensuring physicians stay ahead of an ever-changing pharmaceutical landscape. Rather than replacing clinical judgment, Synesis enhances it. 
+          </p>
+        </section>
+
+        {/* The Synesis Advantage */}
+        <section className="space-y-6 max-w-4xl">
           <h2 className="text-5xl font-semibold text-gray-100">The Synesis Advantage</h2>
           <p className="text-2xl text-gray-200 leading-relaxed">
-            Synesis provides personalized, cross-specialty treatment optimization that 
-            adapts to individual patients. Using machine learning, it continuously refines 
-            recommendations based on real physician decisions, evolving guidelines, and patient-specific factors. 
-            Unlike traditional systems that overwhelm doctors with generic alerts, Synesis delivers actionable, 
-            context-aware insights, reducing cognitive burden. By integrating seamlessly into physician workflows, 
-            it enables smarter, safer, and coordinated care without disruption.
+          Synesis redefines clinical decision support with personalized, cross-specialty treatment optimization powered by machine learning. 
+          It continuously refines recommendations based on real physician decisions, evolving medical guidelines, and patient-specific factors, 
+          ensuring insights remain dynamic and clinically relevant. Unlike traditional systems that burden physicians with generic, low-value alerts, 
+          Synesis delivers only the most actionable, context-aware insights. Designed for seamless workflow integration, it empowers care teams to provide 
+          smart, safe, and coordinated treatment—without disruption.
+          </p>
+
+          <p className="text-2xl text-gray-200 leading-relaxed">
+          Synesis has secured strong early traction, with interest from major healthcare organizations 
+            such as <span className="font-semibold text-gray-50">Kaiser Permanente</span> and 
+            strategic support from <span className="font-semibold text-gray-50">Mitsubishi Electric Innovation Center</span>. 
+            
           </p>
         </section>
 
-        <section className="space-y-6 max-w-3xl">
-          <h2 className="text-5xl font-semibold text-gray-100">Founding Team</h2>
-          <p className="text-2xl text-gray-200">
-            <span className="font-semibold text-gray-50">Alyssa Mia Taliotis</span> <br />
-            AI, ML for Medical Innovation Research at Harvard SEAS & MIT <br />
-            Mathematician <br />
-            <Link href="https://www.linkedin.com/in/alyssa-mia-taliotis/" target="_blank" className="text-black-400 font-semibold hover:underline">
-              LinkedIn
-            </Link>
-          </p>
+        
+        {/* Research Team */}
+        <section className="space-y-6 max-w-4xl">
+          <h2 className="text-5xl font-semibold text-gray-100">Research Team</h2>
+          <div className="text-2xl text-gray-200 space-y-4">
+            <p>
+              <span className="font-semibold text-gray-50">Alyssa Mia Taliotis</span> <br />
+              AI, ML for Medical Innovation Research at Harvard SEAS & MIT <br />
+              Mathematician <br />
+              <Link href="https://www.linkedin.com/in/alyssa-mia-taliotis/" target="_blank" className="text-black-400 font-semibold hover:underline">
+                LinkedIn
+              </Link>
+            </p>
+            <p>
+              <span className="font-semibold text-gray-50">Zulal Akarsu</span> <br />
+              AI, ML for Medical Innovation Research at Harvard SEAS & MIT <br />
+              Mathematician <br />
+              <Link href="https://www.linkedin.com/in/alyssa-mia-taliotis/" target="_blank" className="text-black-400 font-semibold hover:underline">
+                LinkedIn
+              </Link>
+            </p>
+            
+            
+            <p>
+              <span className="font-semibold text-gray-50">Shiv Redhu</span> <br />
+              AI, ML for Medical Innovation Research at Harvard SEAS & MIT <br />
+              Mathematician <br />
+              <Link href="https://www.linkedin.com/in/alyssa-mia-taliotis/" target="_blank" className="text-black-400 font-semibold hover:underline">
+                LinkedIn
+              </Link>
+            </p>
+
+
+            
+          </div>
         </section>
+
+        {/* Call to Action */}
+        <section className="space-y-6 max-w-3xl text-center mx-auto">
+          <h2 className="text-5xl font-semibold text-gray-100">Join Us</h2>
+          <p className="text-2xl text-gray-200 leading-relaxed">
+            Help shape the future of AI-powered medical intelligence. <br />
+            Whether you're a physician, healthcare system, or investor, we’d love to connect.
+          </p>
+          <Link href="mailto:alyssamiataliotis@gmail.com" className="px-6 py-3 text-lg font-semibold text-gray-100 bg-gray-800 rounded-lg hover:bg-gray-700">
+            Get in Touch
+          </Link>
+        </section>
+
       </div>
     </div>
   );
