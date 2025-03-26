@@ -227,17 +227,6 @@ export default function Home() {
                 View Profile →
               </Link>
             </div>
-            <div className="p-8 border border-[#E8E3DC] hover:border-[#2C3D4D] transition-all">
-              <h3 className="text-xl font-light text-[#2C3D4D] mb-2">Luigi De Angelis, MD</h3>
-              <p className="text-[#4A4A4A] font-light mb-4">Physician and Public Health Expert, Harvard Chan</p>
-              <Link 
-                href="https://www.linkedin.com/in/luigi-de-angelis-md-803388205/" 
-                target="_blank"
-                className="text-sm text-[#2C3D4D] hover:underline"
-              >
-                View Profile →
-              </Link>
-            </div>
           </div>
         </div>
       </section>
